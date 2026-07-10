@@ -1,1 +1,79 @@
+CONTEXTUALIZAÇÃO DO PROBLEMA
 
+Problema do descontrole financeiro entre os jovens vem crescendo nos últimos anos, principalmente entre adolescentes e jovens que começaram a ter acesso a recursos financeiros como mesadas, cartões e contas digitais.
+Grande parte dos jovens não possui orientação suficiente sobre educação financeira, o que contribui para decisões impulsivas e falta de planejamento. Muitos gastam sem acompanhar para onde o dinheiro está indo, não criam reservas financeiras e acabam desenvolvendo dificuldades relacionadas à organização financeira.
+Foi realizada uma pesquisa de campo na escola ECIT Mestre Sivuca com alunos do 9º Ano, 1º DS-A, 1º DS-B, 1º M-A, 1º M-B e 2º DS-B
+Os principais problemas identificados foram:
+    • Gastos excessivos e impulsivos
+    • Falta de organização financeira
+    • Pouca preocupação com reservas financeiras
+    • Falta de orientação escolar e familiar
+    • Dificuldade em economizar
+    • Falta de planejamento financeiro
+Também foram identificados gastos “invisíveis”, como assinaturas digitais, jogos, lanches e saídas com amigos, que acabam comprometendo o orçamento mensal dos jovens.
+Dados Coletados
+    • A maioria dos jovens não sabe lidar corretamente com dinheiro.
+    • Muitos jovens gastam mais do que deveriam.
+    • A preocupação financeira varia de acordo com cada pessoa.
+    • A maior dificuldade identificada foi a falta de organização financeira.
+    • A maioria acredita que a escola não ensina educação financeira suficiente.
+    • Todos consideram importante aprender educação financeira desde cedo.
+A pesquisa mostrou que muitos jovens reconhecem suas dificuldades financeiras e demonstram interesse em aprender mais sobre planejamento e controle financeiro
+
+
+Problema Central
+Falta de educação e organização financeira entre os jovens, causando gastos impulsivos, dificuldade em economizar e pouca consciência sobre planejamento financeiro.
+
+
+Objetivo da Proposta
+Objetivo Geral:
+Desenvolver um banco digital voltado para jovens, incentivando o controle financeiro, o planejamento e o hábito de economizar.
+Objetivos Específicos:
+    • Mostrar automaticamente onde o dinheiro está sendo gasto.
+    • Criar metas financeiras mensais.
+    • Oferecer educação financeira dentro do aplicativo.
+    • Enviar alertas de limite de gastos.
+    • Permitir controle de gastos pelos responsáveis.
+
+
+Proposta da Solução (Aplicação)
+Nome da Aplicação: MaréBank Descrição: O MaréBank
+é um banco digital desenvolvido especialmente para jovens, com o objetivo de ajudar no controle financeiro e na construção de hábitos mais conscientes em relação ao dinheiro. O sistema utiliza uma linguagem simples e recursos interativos para facilitar o aprendizado financeiro dos usuários.
+
+
+
+
+Funcionalidades do Sistema
+    • Categorização automática de gastos.
+    • Cofres por objetivo para guardar dinheiro.
+    • Sentinela de gastos com notificações de limite.
+    • Cartão mesada com gestão de limite pelos responsáveis.
+    • MaréBank Academy com vídeos, desafios e jogos educativos sobre finanças.
+
+
+Público-Alvo
+    • Adolescentes e jovens.
+    • Pais e responsáveis.
+    • Escolas parceiras interessadas em educação financeira.
+Como a Aplicação Resolve o Problema
+A aplicação transforma gastos impulsivos em decisões conscientes através de monitoramento financeiro, metas e educação financeira.
+Benefícios:
+    • Incentiva o hábito de economizar.
+    • Promove diálogo financeiro entre pais e filhos.
+    • Reduz compras por impulso.
+    • Combate a ansiedade financeira.
+    • Ajuda os jovens a entenderem melhor para onde o dinheiro está indo.
+Tecnologias do Projeto
+    • Frontend: HTML e CSS
+    • Backend: Django
+    • Banco de Dados: PostgreSQL
+Resultados Esperados
+Espera-se que o projeto contribua para melhorar o controle financeiro entre os jovens, aumentando a conscientização sobre planejamento e uso do dinheiro.
+Também é esperado que os estudantes reflitam mais antes de realizar gastos e desenvolvam hábitos financeiros mais saudáveis.
+Melhorias Futuras
+    • Suporte para mais idiomas.
+    • Recursos de inclusão e acessibilidade.
+    • Implementação de inteligência artificial para tirar dúvidas financeiras.
+Conclusão
+Foi possível compreender que muitos jovens enfrentam dificuldades no controle financeiro devido à falta de planejamento e educação financeira.
+O MaréBank surge como uma solução prática e acessível, unindo tecnologia e educação financeira para ajudar os jovens a desenvolverem hábitos mais conscientes e responsáveis em relação ao dinheiro.
