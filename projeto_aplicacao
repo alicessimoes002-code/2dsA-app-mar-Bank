@@ -1,1 +1,32 @@
+PROPOSTA DE APLICAÇÃO.
+Segurança dos Dados e Controle de Login em um Sistema Web
+
+Segurança dos Dados
+
+Para garantir a segurança das informações dos usuários, o sistema será desenvolvido utilizando HTML, CSS, Django e PostgreSQL. 
+O HTML será utilizado para criar as páginas do sistema, como a tela de login e os formulários de cadastro. O CSS será responsável pela aparência e organização dessas páginas.
+O Django será o responsável por controlar a segurança do sistema. Ele verifica se o usuário informou corretamente o nome de usuário e a senha antes de permitir o acesso. Além disso, o Django
+protege a aplicação contra ataques comuns da internet e armazena as senhas de forma criptografada, ou seja, elas não ficam visíveis no banco de dados.
+O PostgreSQL será utilizado para armazenar todas as informações do sistema, como os dados dos usuários, clientes e demais registros. O acesso ao banco de dados será permitido
+apenas para usuários autorizados, garantindo maior proteção das informações.
+
+Controle de Login
+O sistema possuirá uma tela de login onde o usuário deverá informar seu nome de usuário e sua senha.
+Após o preenchimento desses dados, o Django verificará se as informações estão corretas. Caso estejam corretas, o usuário poderá acessar o sistema. Caso contrário, será exibida uma mensagem informando que o usuário ou a senha estão incorretos.
+
+Quem poderá fazer login
+
+Nem todas as pessoas terão acesso ao sistema. Apenas usuários previamente cadastrados poderão realizar o login.
+Cada usuário possuirá um nível de acesso de acordo com sua função:
+
+Administrador: poderá acessar todas as funcionalidades do sistema.
+Funcionário: poderá consultar e cadastrar informações permitidas pela empresa.
+Cliente (quando houver): poderá acessar apenas os seus próprios dados.
+
+Esse controle de acesso garante que cada usuário visualize somente as informações que lhe são autorizadas.
+
+Conclusão
+
+A utilização do HTML, CSS, Django e PostgreSQL permite desenvolver um sistema organizado, seguro e confiável. O Django oferece recursos que protegem os dados dos usuários e controlam o acesso ao sistema,
+enquanto o PostgreSQL armazena as informações de forma segura. Dessa maneira, apenas usuários autorizados conseguem acessar os dados, contribuindo para a proteção e a confiabilidade do sistema.
 
