@@ -26,7 +26,6 @@ Resultados Esperados
 Com o MaréBank, espera-se que os usuários desenvolvam hábitos financeiros mais saudáveis, aprendam a economizar, acompanhem seus gastos e tomem decisões mais conscientes sobre o uso do dinheiro.
 
 AUTORES: 
-
 Lays Marina Araújo da Silva
 Alice Reis de Souza
 Alice Rafaelly Simões Nascimento
