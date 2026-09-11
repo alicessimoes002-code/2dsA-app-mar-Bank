@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { base44 } from "@/api/base44Client";
+import { localClient } from "@/api/localClient";
 import { categoryConfig, categorizeTransaction, formatCurrency, formatDate } from "@/lib/finance";
 import CategoryBadge from "@/components/CategoryBadge";
 import { Plus, Search, Wallet, Trash2, TrendingUp, TrendingDown, Sparkles } from "lucide-react";
@@ -18,7 +18,7 @@ export default function Transacoes() {
 
   async function loadTransactions() {
     try {
-      const data = await base44.entities.Transaction.list("-date", 100);
+      const data = await localClient.entities.Transaction.list("-date", 100);
       setTransactions(data);
     } catch (e) {
       console.error(e);
@@ -35,7 +35,7 @@ export default function Transacoes() {
   async function handleSubmit(e) {
     e.preventDefault();
     const category = form.category || categorizeTransaction(form.description);
-    await base44.entities.Transaction.create({
+    await localClient.entities.Transaction.create({
       description: form.description,
       amount: parseFloat(form.amount),
       type: form.type,
@@ -48,7 +48,7 @@ export default function Transacoes() {
   }
 
   async function handleDelete(id) {
-    await base44.entities.Transaction.delete(id);
+    await localClient.entities.Transaction.delete(id);
     setTransactions((prev) => prev.filter((t) => t.id !== id));
   }
 

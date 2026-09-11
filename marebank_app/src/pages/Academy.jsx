@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { base44 } from "@/api/base44Client";
+import { localClient } from "@/api/localClient";
 import { BookOpen, Trophy, Zap, Star, Clock, CheckCircle2, Lock, ArrowRight, X, Brain, Target, Gamepad2 } from "lucide-react";
 import GameModal from "@/components/GameModal";
 
@@ -15,19 +15,19 @@ export default function Academy() {
     async function loadData() {
       try {
         const [lessonData, challengeData] = await Promise.all([
-          base44.entities.AcademyLesson.list("order", 50),
-          base44.entities.Challenge.list("-updated_date", 20),
+          localClient.entities.AcademyLesson.list("order", 50),
+          localClient.entities.Challenge.list("-updated_date", 20),
         ]);
         if (lessonData.length === 0) {
           await seedLessons();
-          const reloaded = await base44.entities.AcademyLesson.list("order", 50);
+          const reloaded = await localClient.entities.AcademyLesson.list("order", 50);
           setLessons(reloaded);
         } else {
           setLessons(lessonData);
         }
         if (challengeData.length === 0) {
           await seedChallenges();
-          const reloaded = await base44.entities.Challenge.list("-updated_date", 20);
+          const reloaded = await localClient.entities.Challenge.list("-updated_date", 20);
           setChallenges(reloaded);
         } else {
           setChallenges(challengeData);
@@ -42,7 +42,7 @@ export default function Academy() {
   }, []);
 
   async function seedLessons() {
-    await base44.entities.AcademyLesson.bulkCreate([
+    await localClient.entities.AcademyLesson.bulkCreate([
       { title: "O que é dinheiro?", description: "Aprenda os conceitos básicos sobre dinheiro e sua função.", content: "O dinheiro é um meio de troca usado para adquirir bens e serviços. Ele facilita as transações e permite que as pessoas comprem o que precisam sem precisar trocar produtos diretamente. Entender o valor do dinheiro é o primeiro passo para a educação financeira.", category: "basico", level: "iniciante", duration_minutes: 5, xp_reward: 50, icon: "BookOpen", order: 1, is_completed: false },
       { title: "Diferença entre needs e wants", description: "Necessidades vs. desejos: como priorizar seus gastos.", content: "Necessidades são coisas essenciais para viver: comida, moradia, saúde. Desejos são coisas que gostaríamos de ter, mas não são essenciais. Saber a diferença ajuda a tomar decisões financeiras mais conscientes e evitar gastos impulsivos.", category: "consumo_consciente", level: "iniciante", duration_minutes: 7, xp_reward: 60, icon: "BookOpen", order: 2, is_completed: false },
       { title: "Como criar um orçamento", description: "Aprenda a planejar seus gastos mensais.", content: "Um orçamento é um plano de como você vai gastar seu dinheiro. Comece listando suas entradas (mesada, presente) e divida em categorias: necessidades (50%), desejos (30%) e poupança (20%). Revise mensalmente e ajuste conforme necessário.", category: "planejamento", level: "intermediario", duration_minutes: 10, xp_reward: 80, icon: "BookOpen", order: 3, is_completed: false },
@@ -53,7 +53,7 @@ export default function Academy() {
   }
 
   async function seedChallenges() {
-    await base44.entities.Challenge.bulkCreate([
+    await localClient.entities.Challenge.bulkCreate([
       {
         title: "Quiz: Básico de Dinheiro",
         description: "Teste seus conhecimentos sobre o básico de dinheiro.",
@@ -136,7 +136,7 @@ export default function Academy() {
   }
 
   async function completeLesson(lesson) {
-    await base44.entities.AcademyLesson.update(lesson.id, { is_completed: true });
+    await localClient.entities.AcademyLesson.update(lesson.id, { is_completed: true });
     setLessons((prev) => prev.map((l) => (l.id === lesson.id ? { ...l, is_completed: true } : l)));
     setActiveLesson(null);
   }

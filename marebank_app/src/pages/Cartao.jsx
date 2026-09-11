@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { base44 } from "@/api/base44Client";
+import { localClient } from "@/api/localClient";
 import { formatCurrency, formatDate } from "@/lib/finance";
 import AlertBanner from "@/components/AlertBanner";
 import { CreditCard, Eye, EyeOff, Shield, TrendingDown, Wallet, Lock, Bell } from "lucide-react";
@@ -15,8 +15,8 @@ export default function Cartao() {
     async function loadData() {
       try {
         const [data, settings] = await Promise.all([
-          base44.entities.Transaction.list("-date", 50),
-          base44.entities.CardSetting.list("-updated_date", 1),
+          localClient.entities.Transaction.list("-date", 50),
+          localClient.entities.CardSetting.list("-updated_date", 1),
         ]);
         setTransactions(data);
         if (settings.length > 0) {

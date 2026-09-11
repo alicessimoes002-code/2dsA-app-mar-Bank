@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { base44 } from "@/api/base44Client";
+import { localClient } from "@/api/localClient";
 import { formatCurrency, formatDate } from "@/lib/finance";
 import { Plus, Target, Trash2, TrendingUp, Gift, Calendar, Sparkles, X } from "lucide-react";
 
@@ -26,7 +26,7 @@ export default function Cofres() {
 
   async function loadCofres() {
     try {
-      const data = await base44.entities.Cofre.list("-updated_date", 50);
+      const data = await localClient.entities.Cofre.list("-updated_date", 50);
       setCofres(data);
     } catch (e) {
       console.error(e);
@@ -37,7 +37,7 @@ export default function Cofres() {
 
   async function handleCreate(e) {
     e.preventDefault();
-    await base44.entities.Cofre.create({
+    await localClient.entities.Cofre.create({
       name: form.name,
       goal_amount: parseFloat(form.goal_amount),
       current_amount: 0,
@@ -54,7 +54,7 @@ export default function Cofres() {
     e.preventDefault();
     const cofre = depositCofre;
     const newAmount = cofre.current_amount + parseFloat(depositAmount);
-    await base44.entities.Cofre.update(cofre.id, {
+    await localClient.entities.Cofre.update(cofre.id, {
       current_amount: newAmount,
       status: newAmount >= cofre.goal_amount ? "completed" : "active",
     });
@@ -64,7 +64,7 @@ export default function Cofres() {
   }
 
   async function handleDelete(id) {
-    await base44.entities.Cofre.delete(id);
+    await localClient.entities.Cofre.delete(id);
     setCofres((prev) => prev.filter((c) => c.id !== id));
   }
 

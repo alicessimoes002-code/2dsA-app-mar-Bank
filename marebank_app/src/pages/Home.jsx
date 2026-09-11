@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { base44 } from "@/api/base44Client";
+import { localClient } from "@/api/localClient";
 import { categoryConfig, formatCurrency, formatDate, categoryColors } from "@/lib/finance";
 import CategoryBadge from "@/components/CategoryBadge";
 import SpendingChart from "@/components/SpendingChart";
@@ -17,8 +17,8 @@ export default function Home() {
     async function loadData() {
       try {
         const [txs, savedCofres] = await Promise.all([
-          base44.entities.Transaction.list("-date", 50),
-          base44.entities.Cofre.list("-updated_date", 10),
+          localClient.entities.Transaction.list("-date", 50),
+          localClient.entities.Cofre.list("-updated_date", 10),
         ]);
         setTransactions(txs);
         setCofres(savedCofres);
